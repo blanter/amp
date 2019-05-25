@@ -1,0 +1,161 @@
+/*
+    Colorbox Core Style:
+    The following CSS is consistent between example themes and should not be altered.
+*/
+
+/*#colorbox{top:460px !important}*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999;/* overflow:hidden;*/}
+#cboxWrapper {max-width:none;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
+.cboxIframe{width:100%; height:100%; display:block; border:0; padding:0; margin:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+
+/*
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background:#000; opacity: 0.5; filter: alpha(opacity = 50);}
+#colorbox{outline:0;overflow: visible !important;}
+    /*#cboxTopLeft{width:21px; height:21px; background:url(images/controls.png) no-repeat -101px 0;}
+    #cboxTopRight{width:21px; height:21px; background:url(images/controls.png) no-repeat -130px 0;}
+    #cboxBottomLeft{width:21px; height:21px; background:url(images/controls.png) no-repeat -101px -29px;}
+    #cboxBottomRight{width:21px; height:21px; background:url(images/controls.png) no-repeat -130px -29px;}
+    #cboxMiddleLeft{width:21px; background:url(images/controls.png) left top repeat-y;}
+    #cboxMiddleRight{width:21px; background:url(images/controls.png) right top repeat-y;}
+    #cboxTopCenter{height:21px; background:url(images/border.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:21px; background:url(images/border.png) 0 -29px repeat-x;}*/
+    #cboxContent{/* overflow:hidden;*/}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{margin-bottom:0;}
+        #cboxTitle{position:absolute; bottom:4px; left:0; text-align:center; width:100%; color:#949494;}
+        #cboxCurrent{position:absolute; bottom:4px; left:58px; color:#949494; display: none !important;}
+        #cboxLoadingOverlay{/* background:url(images/loading_background.png) no-repeat center center; */}
+        #cboxLoadingGraphic{/* background:url(images/loading.gif) no-repeat center center; */}
+
+        /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+        #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
+
+        #cboxPrevious, #cboxNext, #cboxClose {
+            -webkit-transition: all .25s ease;
+               -moz-transition: all .25s ease;
+                -ms-transition: all .25s ease;
+                 -o-transition: all .25s ease;
+                    transition: all .25s ease;
+        }
+
+        /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+        #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
+
+        #cboxSlideshow{position:absolute; bottom:4px; right:30px; color:#0092ef;}
+        #cboxPrevious{
+            position:absolute;
+            top:50%;
+            left:-15px;
+            margin-top: -25px;
+            width:50px; height:50px; text-indent:-9999px;
+            /* background: url(images/btn_prev.png) no-repeat 0 0; */
+        }
+        #cboxPrevious:hover{opacity: .6;}
+        #cboxNext{
+            position:absolute;
+            top: 50%;
+            right: -15px;
+            width:50px;
+            height:50px;
+            text-indent:-9999px;
+            margin-top: -25px;
+            /* background: url(images/btn_next.png) no-repeat 0 0; */
+        }
+        #cboxNext:hover{opacity: .6;}
+        #cboxClose{position:absolute; top: 0; right: 0; margin-left: -100px; no-repeat 0 0; width:200px; height:40px;font-size: 20px;}
+        #cboxClose:hover{ opacity: .6;}
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+}
+
+
+/*???????? ?????*/
+.modal{
+    background-color: #d5e7b0;
+    background-color: rgba(213, 231, 176, .5);
+    padding: 10px;
+}
+.modal p{
+    background: url(images/modal_bg.png) repeat 0 0;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    width: 495px;
+    text-align: center;
+}
+#cboxContent.open{
+    background-color: transparent;
+}
+
+
+/*????????????????????????*/
+.modal02{
+    background-color: #d5e7b0;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 10px;
+}
+.modal02 .modal_inner{
+    background: #fff url(../images/modal/modal_bg.png) 98% 96% no-repeat;
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal02 .modal_inner h3{
+  font-family:'?????????? ProN W6', 'HiraMinProN-W6', 'HG???E', '???? ?????', 'MS PMincho', 'MS ???', serif;
+  background: url(../images/modal/modal_headline_img.png) center bottom no-repeat;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.modal02 .modal_inner p{
+  text-align: left;
+  line-height: 1.8;
+  color: #333;
+  padding: 30px 30px 60px 30px;
+}
+
+
+.modal02-wrapper #cboxContent.open,.modal03-wrapper #cboxContent.open{
+    background-color: transparent;
+}
+/*.modal02-wrapper #cboxClose{position:absolute; bottom: 0; right: 0; left: 0; margin: 0 auto; background:url(images/btn_close.png) no-repeat 0 0; width:100px; height:40px; text-indent:-9999px;}*/
+.modal02-wrapper #cboxClose,.modal03-wrapper #cboxClose{
+  position: absolute;
+  bottom: -70px;
+  z-index: 9999;
+  color: white;
+  left: 50%;
+  top: auto;
+  margin-left: -50px;
+  width: 100px;
+  height: 40px;
+}

@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/*-----------------------------
+	general
+------------------------------*/
+
+/* float
+**********************************/
+.fl {float: left;}
+.fr {float: right;}
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/* margin
+**********************************/
+.mb10 {margin-bottom: 10px !important;}
+.mb15 {margin-bottom: 15px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb40 {margin-bottom: 40px !important;}
+
+/* text-hidden
+**********************************/
+.to {
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+	font-size: 0px;
+}
+
+/* text-align
+**********************************/
+.tc {text-align: center;}
+.tr {text-align: right;}
+
+/* box-center
+**********************************/
+.bc {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* display
+**********************************/
+.hide {
+	display: none;
+}
+.hide-pc {
+	display: none;
+}
+.show {
+	display: block;
+}
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+.op0{
+	opacity: 0;
+}
+
+/*--------------------------------------------------
+ base
+-------------------------------------------------- */
+html{
+	/*rem?*/
+	font-size: 10px;
+}
+
+body {
+	width: 100%;
+	font-family: "???", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "MS ??", serif;	line-height: 1.6;
+	color: #333;
+	background: #fff;
+	font-size: 14px;
+	position: relative;
+	-webkit-text-size-adjust: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+/*border-box*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.nav.is-animated ul li a.CommingSoon,
+.nav-2nd ul li a.CommingSoon{
+	opacity: 0.3;
+}
+
+/*.nav ul li a.CommingSoon,
+.nav-2nd ul li a.CommingSoon{
+	opacity: 0.3;
+}*/
+/* PC?? */
+@media screen and (min-width: 768px) {
+	.nav ul li a.CommingSoon:hover{
+		-webkit-transform: rotate(-30deg) translateX(30%) !important;
+		-ms-transform: rotate(-30deg) translateX(30%) !important;
+		transform: rotate(-30deg) translateX(30%) !important;
+	}
+	.nav-2nd ul li a.CommingSoon:hover{
+		opacity: 0.3;
+		-webkit-transform: rotate(-30deg) translateX(30%) !important;
+		-ms-transform: rotate(-30deg) translateX(30%) !important;
+		transform: rotate(-30deg) translateX(30%) !important;
+	}
+
+}
