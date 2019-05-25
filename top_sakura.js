@@ -5,8 +5,8 @@ var modalFlag = false;
 var loadFlag = false;
 
 var setting = {
-	//amount: 200, //???
-	amount: 100, //???
+	//amount: 200, //邱乗焚
+	amount: 100, //邱乗焚
 	minW: 1280
 };
 
@@ -31,7 +31,7 @@ var mouseY;
 var preloadImages;
 
 
-//?????????
+//繝励Μ繝ｭ繝ｼ繝�
 //---------------------------------------
 var queue = new createjs.LoadQueue();
 queue.on("fileload", handleFileload, this);
@@ -42,21 +42,21 @@ queue.on("error", function(){
 
 var items = {};
 var bitmapItems = [];
-//1??????????
+//1繝輔ぃ繧､繝ｫ縺斐→
 function handleFileload(e){
 	items[e.item.id] = e.result;
 }
-//????????????
+//隱ｭ縺ｿ霎ｼ縺ｿ邨ゆｺ�
 function handleComplete(){
 	loadFlag = true;
-	//loading?????
+	//loading繧呈ｶ亥悉
 	$('.loading').fadeOut(500);
 	start();
 }
 
 function start(){
-	// loading?????
-	// ????????????@??????????i
+	// loading繧呈ｶ亥悉
+	// 縺ｾ縺�繧ｹ繧ｿ繝ｼ繝医＠縺ｦ縺�↑縺九▲縺溘ｉ
 	if(!startFlag && loadFlag && modalFlag){
 		setTimeout(function(){
 			init();
@@ -64,7 +64,8 @@ function start(){
 	}
 }
 
-//????????????
+var imgPath = './images/top/';
+//隱ｭ縺ｿ霎ｼ繧逕ｻ蜒�
 var manifest = [
 	{ id: 'sakura1', src: 'https://1.bp.blogspot.com/-akBAPL1OqbA/XOkVWVue4hI/AAAAAAAABHw/82dD_ce0Dcw6JZ-9NKpKPsI9HOEujpy1ACLcBGAs/s1600/sakura01.png'},
 	{ id: 'sakura2', src: 'https://1.bp.blogspot.com/-pXr-V3t_l-M/XOkVWflv5TI/AAAAAAAABH0/dKjCH_eEELcOMSg1Q29VijXr40tyuEfdwCLcBGAs/s1600/sakura02.png'},
@@ -86,37 +87,37 @@ var manifest = [
 	{ id: 'chara06', src: + 'https://1.bp.blogspot.com/--Izz_AvNzL4/XOkVUxwQfRI/AAAAAAAABHg/OPwuI2M2JNY7VKkpcSNsXWXHLvByqxIkwCLcBGAs/s1600/chara06.png'},
 	{ id: 'twinkle', src: + 'https://1.bp.blogspot.com/-CD5KZSsugE0/XOkVY-Pv_wI/AAAAAAAABIU/r0WrvlX_RjUKiiM6NkFTzXZmDOrxxnwDwCLcBGAs/s1600/twinkle.png'}
 ];
-//????r??????
+//逕ｻ蜒上ｒ繝ｭ繝ｼ繝�
 queue.loadManifest(manifest);
 
 //sprites
 //---------------------------------
 var sprites_sakura = [],
-	s_speedY = [], // ????????????
-	s_speedX = [], // ????????????
+	s_speedY = [], // 邵ｦ譁ｹ蜷代せ繝斐�繝�
+	s_speedX = [], // 讓ｪ譁ｹ蜷代せ繝斐�繝�
 	s_rotate = [],
-	s_shakeW = [], //??l??
-	s_shakeT = [], //??l???????
+	s_shakeW = [], //繧�ｌ蟷�
+	s_shakeT = [], //繧�ｌ繧ｹ繝斐�繝�
 	sprites_karuta = [],
 	k_speed = [],
 	sprites_wood = [],
 	sprites_other = [],
 	w_speed = [5000],
 	sprites_chara = [],
-	count = 0, //??????
-	w_count = 0, //????
-	w_acc = 0.02, //??????
-	w_speed = 0; //??????????
+	count = 0, //蝗櫁ｻ｢逕ｨ
+	w_count = 0, //鬚ｨ逕ｨ
+	w_acc = 0.02, //鬚ｨ蜉�騾�
+	w_speed = 0; //蛻晄悄繧ｹ繝斐�繝�
 
 // PIXI.loader
-// 	.add('sakura01', 'http://www.saki-project.jp/images/s2_top/sakura01.png')
-// 	.add('sakura02', 'http://www.saki-project.jp/images/s2_top/sakura02.png')
-// 	.add('sakura03', 'http://www.saki-project.jp/images/s2_top/sakura03.png')
-// 	.add('sakura04', 'http://www.saki-project.jp/images/s2_top/sakura04.png')
-// 	.add('sakura05', 'http://www.saki-project.jp/images/s2_top/sakura05.png')
-// 	.add('sakura06', 'http://www.saki-project.jp/images/s2_top/sakura06.png')
-// 	.add('sakura07', 'http://www.saki-project.jp/images/s2_top/sakura07.png')
-// 	.add('sakura08', 'http://www.saki-project.jp/images/s2_top/sakura08.png')
+// 	.add('sakura01', 'images/s2_top/sakura01.png')
+// 	.add('sakura02', 'images/s2_top/sakura02.png')
+// 	.add('sakura03', 'images/s2_top/sakura03.png')
+// 	.add('sakura04', 'images/s2_top/sakura04.png')
+// 	.add('sakura05', 'images/s2_top/sakura05.png')
+// 	.add('sakura06', 'images/s2_top/sakura06.png')
+// 	.add('sakura07', 'images/s2_top/sakura07.png')
+// 	.add('sakura08', 'images/s2_top/sakura08.png')
 // 	.load(function(loader,resources){
 // 		init(loader, resources);
 // 	});
@@ -126,17 +127,17 @@ function init(){
 
 	startFlag = true;
 
-	//????????
+	//繧ｵ繧ｯ繝ｩ逕ｨ
 	stage = new createjs.Stage("myCanvas1");
-	//?????????????
+	//繧ｭ繝｣繝ｩ繝ｻ閭梧勹逕ｨ
 	stage2 = new createjs.Stage("myCanvas2");
 	stage2.canvas.width = setting.minW;
 	stage2.canvas.height = windowH;
 
-	//????????m??
+	//繧ｵ繧ｯ繝ｩ蠕後ｍ逕ｨ
 	stage3 = new createjs.Stage("myCanvas3");
 
-	//?????
+	//縺輔￥繧�
 	stage2_sakura = new createjs.Container();
 	stage2_chara = new createjs.Container();
 
@@ -144,14 +145,14 @@ function init(){
 	stage2.addChild(stage2_chara);
 
 
-	//?????
+	//縺輔￥繧�
 	for (var i = 0; i < setting.amount ; i++) {
 
-		//sprite????
+		//sprite險ｭ螳�
 		var sakura;
-		var SECRET_PRO = 1000; //??????1??°????
+		var SECRET_PRO = 1000; //菴募倶ｸｭ1蛟九°險ｭ螳�
 
-		// ???????????
+		// 繧ｷ繝ｼ繧ｯ繝ｬ繝�ヨ
 		var a = Math.floor(Math.random()*SECRET_PRO) +1;
 		if(a === SECRET_PRO){
 			var sakura = new createjs.Bitmap(items['sakura_secret']);
@@ -175,18 +176,18 @@ function init(){
 		// var scale = (baseParam*4 + 0.1);
 		sakura.scaleX = sakura.scaleY = scale;
 
-		//???????????
+		//繧ｹ繝斐�繝芽ｨｭ螳�
 		var speedY = baseParam*4 + 0.5;
 		var speedX = baseParam*2 + 0.5;
 
-		//????????
+		//蝗櫁ｻ｢險ｭ螳�
 		var rotate = Math.random()*0.5 + 1;
 
-		//??l????
+		//繧�ｌ險ｭ螳�
 		var shakeW = Math.random()*0.5 + 0.2;
 		var shakeT = Math.random()*20 + 20;
 
-		// ????@
+		// 縺ｼ縺九＠
 		if(baseParam > 0.3){
 			var filterParam = baseParam * 8;
 			var blurFilter = new createjs.BlurFilter(filterParam, filterParam, 0);
@@ -217,7 +218,7 @@ function init(){
 
 
 
-	//????????????
+	//繧ｭ繝｣繝ｩ繧ｯ繧ｿ繝ｼ
 	// setBitmap({
 	// 	id: String,
 	// 	container: object,
@@ -231,7 +232,7 @@ function init(){
 	// 	op: number
 	// });
 
-	// ????
+	// 繝ｭ繧ｴ
 	var logo = setBitmap({
 		id: 'logo',
 		container: stage2,
@@ -331,7 +332,7 @@ function init(){
 		zIndex: 1
 	});
 
-	// ???????
+	// 繧ｿ繧､繝医Ν
 	var mainTitle = setBitmap({
 		id: 'mainTitle',
 		container: stage2,
@@ -346,7 +347,7 @@ function init(){
 		zIndex: 1
 	});
 
-	// ????????
+	// 譯懶ｼ井ｸ具ｼ�
 	// var sakura_bottom = setBitmap({
 	// 	id: 'sakura_bottom',
 	// 	container: stage2,
@@ -365,7 +366,7 @@ function init(){
 
 
 
-	// ????
+	// 繝ｭ繧ｴ
 	createjs.Tween.get(logo, { override: true})
 		.to({ y: logo.y + 100, alpha: 0, scaleX: 1, scaleY: 1}, 0)
 		.wait(2400)
@@ -408,17 +409,17 @@ function init(){
 		.wait(2600)
 		.to({ y: chara06.y, alpha: 1, scaleX: 1, scaleY: 1}, 2000, createjs.Ease.circOut);
 
-	// ?????????????
+	// 繝｡繧､繝ｳ繧ｿ繧､繝医Ν
 	createjs.Tween.get(mainTitle, { override: true})
 		.to({ alpha: 0, scaleX: 1, scaleY: 1}, 0)
 		.wait(3000)
 		.to({ alpha: 1, scaleX: 1, scaleY: 1}, 2000, createjs.Ease.circOut)
 		.call(function(){
-			//????????
+			//繧ｭ繝ｩ繧ｭ繝ｩ
 			twinkle();
 		});
 	//
-	// // ????????
+	// // 譯懶ｼ井ｸ具ｼ�
 	// createjs.Tween.get(sakura_bottom, { override: true})
 	// 	.to({ y: sakura_bottom.y, alpha: 0, scaleX: 1, scaleY: 1}, 0)
 	// 	.wait(0)
@@ -426,41 +427,41 @@ function init(){
 	//
 
 
-	// ???????????
+	// 繝｡繝九Η繝ｼ陦ｨ遉ｺ
 	setNav();
 
 
 	changeWindowSize();
 
-	//????G????????????
+	//繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ髢句ｧ�
 	createjs.Ticker.timingMode = createjs.Ticker.RAF;
 	createjs.Ticker.addEventListener("tick", handleTick);
 }
 
 
-// ????G????????
+// 繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ
 // -------------------------------------------
 function animate() {
 
-	// ??
+	// 譯�
 	for(var i = 0; i< setting.amount; i++){
-		//??????????
+		//關ｽ荳九せ繝斐�繝�
 		sprites_sakura[i].y += s_speedY[i];
 		if(sprites_sakura[i].y > windowH + 40){
 			sprites_sakura[i].y = -40;
 			sprites_sakura[i].x = Math.random() * windowW;
 		}
 
-		//????
+		//蝗櫁ｻ｢
 		sprites_sakura[i].rotation += s_rotate[i];
 
-		//??l
+		//繧�ｌ
 		sprites_sakura[i].x += s_speedX[i] + Math.cos(count / s_shakeT[i]) * s_shakeW[i];
 		if(sprites_sakura[i].x > windowW){
 			sprites_sakura[i].x = -40;
 		}
 
-		//??
+		//鬚ｨ
 		if(count === 500 ||  (count > 2000 && count%2000 === 0) && w_count === 0){
 			w_count = 1;
 		}
@@ -471,7 +472,7 @@ function animate() {
 
 
 
-	// ??
+	// 鬚ｨ
 	if(w_count > 0){
 		w_count++;
 
@@ -500,10 +501,10 @@ function animate() {
 }
 
 
-//?????????????
+//繝翫ン繧ｲ繝ｼ繧ｷ繝ｧ繝ｳ
 function setNav(){
 
-	//???????
+	//蛻晄悄險ｭ螳�
 	$('.nav ul li a').velocity({translateY: -100, opacity: 0}, 0);
 
 	function moveNav(){
@@ -515,7 +516,7 @@ function setNav(){
 			$('.nav ul li').eq(i).find('a')
 			.velocity({translateY: 0, opacity: 1}, { duration: 200, delay: delay, easing: 'easeOutBounce', complete: function(){
 				count++;
-				//????G?????????????
+				//繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ邨ゆｺ�凾
 				if(count === listNum){
 					$('.nav ul li a')
 						.velocity({rotateZ: '-30deg'}, 30, 'linear')
@@ -539,7 +540,7 @@ function setNav(){
 
 }
 
-//bitmap??????
+//bitmap繧偵そ繝�ヨ
 // setBitmap({
 	// 	id: String,
 	// 	container: object,
@@ -639,7 +640,7 @@ function setBitmap(o){
 		}
 	}
 
-	//????????x,y
+	//菴咲ｽｮ隱ｿ謨ｴx,y
 	if(o.x){
 		obj.x += o.x;
 	}
@@ -665,13 +666,13 @@ function setBitmap(o){
 }
 
 
-// ????????
+// 繧ｭ繝ｩ繧ｭ繝ｩ
 function twinkle(){
 
 	function Particle(){
 		this.twinkle = new createjs.Bitmap(items['twinkle']);
 		var _t = this.twinkle;
-		//????????
+		//陦ｨ遉ｺ菴咲ｽｮ
 		_t.x = Math.random() * (1260-20) + 20;
 		_t.y = Math.random() * (160-100) +100;
 		_t.regX = _t.getBounds().width/2;
@@ -680,19 +681,19 @@ function twinkle(){
 
 		var twinkleScale = Math.random() * (1.0 - 0.3) + 0.3;
 
-		//???????????
+		//縲繝医ぇ繧､繝ｼ繝ｳ
 		this.createTween(twinkleScale);
 	}
 
 	Particle.prototype = {
-		//?????????
+		//繝医ぇ繧､繝ｼ繝ｳ
 		createTween: function(twinkleScale){
 			var tween = createjs.Tween.get(this.twinkle);
 			tween.to({scaleX:twinkleScale, scaleY:twinkleScale, alpha:1}, 300, createjs.Ease.sineOut)
 				.to({scaleX:0.5, scaleY:0.5, alpha:0.5}, 600, createjs.Ease.sineIn)
 				.call(this.removeTwinkle, [this.twinkle]);
 		},
-		// ???
+		// 蜑企勁
 		removeTwinkle: function(e){
 			stage2.removeChild(e);
 		}
@@ -708,7 +709,7 @@ function twinkle(){
 
 
 
-//????????
+//繝ｪ繧ｵ繧､繧ｺ
 function changeWindowSize(){
 
 	windowW = $w.innerWidth();
@@ -721,15 +722,15 @@ function changeWindowSize(){
 
 
 
-//????F??
+//繧､繝吶Φ繝�
 //----------------------------------------
 
-//????????
+//繝ｪ繧ｵ繧､繧ｺ
 var timer;
 $w.on('resize', function(){
 	clearTimeout( timer );
 	timer = setTimeout(function() {
-		//???????
+		//蜃ｦ逅��螳ｹ
 		changeWindowSize();
 	}, 300 );
 });
@@ -745,7 +746,7 @@ function handleTick(){
 }
 
 
-// ????????
+// 繝｢繝ｼ繝繝ｫ
 // ---------------------------------------------------
 $.colorbox({
 	iframe:true,
