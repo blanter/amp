@@ -67,25 +67,25 @@ function start(){
 var imgPath = './images/top/';
 //隱ｭ縺ｿ霎ｼ繧逕ｻ蜒�
 var manifest = [
-	{ id: 'sakura1', src: 'https://1.bp.blogspot.com/-akBAPL1OqbA/XOkVWVue4hI/AAAAAAAABHw/82dD_ce0Dcw6JZ-9NKpKPsI9HOEujpy1ACLcBGAs/s1600/sakura01.png'},
-	{ id: 'sakura2', src: 'https://1.bp.blogspot.com/-pXr-V3t_l-M/XOkVWflv5TI/AAAAAAAABH0/dKjCH_eEELcOMSg1Q29VijXr40tyuEfdwCLcBGAs/s1600/sakura02.png'},
-	{ id: 'sakura3', src: 'https://1.bp.blogspot.com/-i4ef8unPssU/XOkVWXUwf8I/AAAAAAAABH4/LLU8vLhS6rQx1wx32XXjmW3Sa1vNNGWdwCLcBGAs/s1600/sakura03.png'},
-	{ id: 'sakura4', src: 'https://1.bp.blogspot.com/-L_opxMgGRcU/XOkVW4lw90I/AAAAAAAABH8/m60tpFL6xCI2kgDwgTrvPocGZJmj37rqgCLcBGAs/s1600/sakura04.png'},
-	{ id: 'sakura5', src: 'https://1.bp.blogspot.com/-krDkG5-GxWg/XOkVXG1t6CI/AAAAAAAABIA/iC6_4djnggoQmQXp_sZ4xGiwndPkdXSugCLcBGAs/s1600/sakura05.png'},
-	{ id: 'sakura6', src: 'https://1.bp.blogspot.com/-4yIwYbn9D2A/XOkVXTVue_I/AAAAAAAABIE/dY1KaofunSA5oK44ZspxvunB-QPP4uD8wCLcBGAs/s1600/sakura06.png'},
-	{ id: 'sakura7', src: 'https://1.bp.blogspot.com/-F1g7JWi4Ts0/XOkVXiyto9I/AAAAAAAABII/WiXtCxwj7aYPf10MNGb47tQmE8dj-QrdwCLcBGAs/s1600/sakura07.png'},
-	{ id: 'sakura8', src: 'https://1.bp.blogspot.com/-XlYc_kk_VTg/XOkVX1j4txI/AAAAAAAABIM/n3XJCq1qLHcVhU-CmbD5iuNMrgsJ5iIvwCLcBGAs/s1600/sakura08.png'},
-	{ id: 'sakura_secret', src: 'https://1.bp.blogspot.com/-1ZIICVVEGVk/XOkVZNBBz9I/AAAAAAAABIY/Cyvy5NvaN2krNMWuE21fSFDhPcFyLYNpgCLcBGAs/s1600/sakura_secret.png'},
-	{ id: 'logo', src: 'https://1.bp.blogspot.com/-kskDkTX79S0/XOkVVbO4GII/AAAAAAAABHo/2dapCxSCE4sxnrLT--fupNkX6rJAmI1wgCLcBGAs/s1600/logo.png'},
-	{ id: 'mainTitle', src:  + 'https://1.bp.blogspot.com/-XOM_ObeDOnc/XOkVV8lv8PI/AAAAAAAABHs/ItC2BObFYy0vjFHHJJMdwrHESSUgFwRhQCLcBGAs/s1600/mainTitle.png'},
+	{ id: 'sakura1', src: imgPath + 'sakura01.png'},
+	{ id: 'sakura2', src: imgPath + 'sakura02.png'},
+	{ id: 'sakura3', src: imgPath + 'sakura03.png'},
+	{ id: 'sakura4', src: imgPath + 'sakura04.png'},
+	{ id: 'sakura5', src: imgPath + 'sakura05.png'},
+	{ id: 'sakura6', src: imgPath + 'sakura06.png'},
+	{ id: 'sakura7', src: imgPath + 'sakura07.png'},
+	{ id: 'sakura8', src: imgPath + 'sakura08.png'},
+	{ id: 'sakura_secret', src: imgPath + 'sakura_secret.png'},
+	{ id: 'logo', src: imgPath + 'logo.png'},
+	{ id: 'mainTitle', src: imgPath + 'mainTitle.png'},
 	// { id: 'sakura_bottom', src: imgPath + 'sakura_bottom.png'},
-	{ id: 'chara01', src: + 'https://1.bp.blogspot.com/-SNK5GzaTPcg/XOkVTv-JXxI/AAAAAAAABHY/QobtpdfOFKQRV2yDttzfkf32tt_zm_JHgCLcBGAs/s1600/chara01.png'},
-	{ id: 'chara02', src: + 'https://1.bp.blogspot.com/-7R1eIS-9ll8/XOkVTC9ua4I/AAAAAAAABHU/tEaxFb0S4W890IWlCnujW_bHc_TPuRhhACLcBGAs/s1600/chara02.png'},
-	{ id: 'chara03', src: + 'https://1.bp.blogspot.com/-C9kjP1FDO4g/XOkVS8DEgtI/AAAAAAAABHQ/K-EUet5rH08eTHy1_HvzGy_XKWHDA6l_ACLcBGAs/s1600/chara03.png'},
-	{ id: 'chara04', src: + 'https://1.bp.blogspot.com/-0Q5r-xL08-A/XOkVUiB2yNI/AAAAAAAABHc/BFLRiowJN04gdbpzew4oi7_vnBLCs4fOQCLcBGAs/s1600/chara04.png'},
-	{ id: 'chara05', src: + 'https://1.bp.blogspot.com/-jUqvmI1vDf0/XOkVVBCaOSI/AAAAAAAABHk/nzkMjYulo6worIUmvVZpcocpY7oGIStEQCLcBGAs/s1600/chara05.png'},
-	{ id: 'chara06', src: + 'https://1.bp.blogspot.com/--Izz_AvNzL4/XOkVUxwQfRI/AAAAAAAABHg/OPwuI2M2JNY7VKkpcSNsXWXHLvByqxIkwCLcBGAs/s1600/chara06.png'},
-	{ id: 'twinkle', src: + 'https://1.bp.blogspot.com/-CD5KZSsugE0/XOkVY-Pv_wI/AAAAAAAABIU/r0WrvlX_RjUKiiM6NkFTzXZmDOrxxnwDwCLcBGAs/s1600/twinkle.png'}
+	{ id: 'chara01', src: imgPath + 'chara01.png'},
+	{ id: 'chara02', src: imgPath + 'chara02.png'},
+	{ id: 'chara03', src: imgPath + 'chara03.png'},
+	{ id: 'chara04', src: imgPath + 'chara04.png'},
+	{ id: 'chara05', src: imgPath + 'chara05.png'},
+	{ id: 'chara06', src: imgPath + 'chara06.png'},
+	{ id: 'twinkle', src: imgPath + 'twinkle.png'}
 ];
 //逕ｻ蜒上ｒ繝ｭ繝ｼ繝�
 queue.loadManifest(manifest);
