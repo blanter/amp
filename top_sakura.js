@@ -745,24 +745,6 @@ function handleTick(){
 	animate();
 }
 
-
-// 繝｢繝ｼ繝繝ｫ
-// ---------------------------------------------------
-$.colorbox({
-	iframe:true,
-	href: 'https://www.youtube.com/embed/Y8xe9_pLP9c?autoplay=1&autohide=1',
-	width:1000,
-	height: 600,
-	open: true,
-	className: 'modal03-wrapper',
-	onClosed: function(){
-		modalFlag = true;
-		start();
-	}
-});
-
-
-
 return;
 
 });
