@@ -44,20 +44,11 @@ function handleFileload(e){
 }
 //隱ｭ縺ｿ霎ｼ縺ｿ邨ゆｺ�
 function handleComplete(){
-	loadFlag = true;
-	//loading繧呈ｶ亥悉
-	$('.loading').fadeOut(500);
-	start();
-}
-
-function start(){
 	// loading繧呈ｶ亥悉
-	// 縺ｾ縺�繧ｹ繧ｿ繝ｼ繝医＠縺ｦ縺�↑縺九▲縺溘ｉ
-	if(!startFlag && loadFlag && modalFlag){
-		setTimeout(function(){
-			init();
-		}, 500);
-	}
+	// $('.loading').fadeOut(500, function(){
+	// 	init();
+	// });
+	init();
 }
 
 var imgPath = 'https://1.bp.blogspot.com/';
@@ -744,5 +735,3 @@ function handleTick(){
 return;
 
 });
-
-init();
