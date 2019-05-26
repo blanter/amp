@@ -1,9 +1,5 @@
 $(function(){
 
-var startFlag = false;
-var modalFlag = false;
-var loadFlag = false;
-
 var setting = {
 	//amount: 200, //邱乗焚
 	amount: 100, //邱乗焚
@@ -748,3 +744,5 @@ function handleTick(){
 return;
 
 });
+
+init();
